@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+<！doctype html>
 
 <html>
 
-	<head>
+<head>
 
-		<meta charset="utf-8" />
+<元字符集="utf-8"/>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<元名称="视口"内容="宽度=设备宽度，初始比例=1">
 
-		<title>WebCatX</title>
+<title>WebCatX</title>
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<h1>Hello World</h1>
+<h1>Hello World</h1>
 
-	</body>
+</body>
 
 </html>
