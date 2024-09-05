@@ -1,21 +1,258 @@
+
 <!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幽默的小刘吖个人主页</title>
+    <style>
+        /* 内嵌CSS样式 */
+        body, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color:  #343a40;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+        .website-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 15px;
+        }
+        .website-block {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .website-block:hover {
+            transform: translateY(-5px);
+        }
+        footer {
+            background-color:  #007bff;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .translucent-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        // 内嵌JS脚本
+        document.addEventListener('DOMContentLoaded', function() {
+            var blocks = document.querySelectorAll('.website-block');
+blocks.forEach(function(block) {
+                block.addEventListener('click', function() {
+                    window.location.href = this.dataset.url; // 使用data-url属性跳转
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 顶栏区域 -->
+    <header>
+        <div class="nav">
+            <a href="https://flowus.cn/share/e90296a1-c5f4-4582-ac3c-02f20d5fc34e">打赏我</a>
+            <a href="https://b23.tv/sJ3cZkA">B站             </a>
+            <a href="https://v.kuaishou.com/Q9ZbKR">快手</a>
+            <a href="https://flowus.cn/share/ec836f1d-db61-4f2b-841c-03243377e831
+">联系我</a>
+        </div>
+        <div class="profile">
+            <a href="https://xiaoliu1775.top" target="_blank"><img src="https://s21.ax1x.com/2024/07/31/pkO1CNV.jpg" ></a>
+        </div>
+    </header>
 
-<html>
+</body>
+</html>
+<h1>&#12288</h1>
 
-	<head>
+    <!-- 网站列表区域，点击跳转 -->
+    <main class="website-list">
+        <div class="website-block" data-url="uid1564896.html">
+            <h3>个人博客</h3>
+            <p>每天分享教程内容</p>
+        </div>
+        <div class="website-block" data-url="https://cloud.xiaoliu1775.top">
+            <h3>网盘</h3>
+            <p>免费不限速网盘</p>
+        </div>
+        <div class="website-block" data-url="https://flowus.cn/share/84c8af88-6528-4493-8638-a72fdb5965a4">
+            <h3>lazihub</h3>
+            <p>简洁的教程分享平台</p>
+        </div>
+        <div class="website-block" data-url="lithtml.html">
+            <h3>lazhitook</h3>
+            <p>在线HTML代码编辑器</p>
+        </div>
+<div class="website-block" data-url="https://sino.rth10.com/Check.html">
+            <h3>本机信息查询</h3>
+            <p>本机信息检查</p>
+        </div>
+<div class="website-block" data-url="https://flowus.cn/share/792b2ab3-aa1e-421a-8b6e-22c88ee75308">
+            <h3>关于</h3>
+            <p>来纸工作室</p>
+        </div>
+    <!-- 更多网站块... -->
+    </main>
+    </body>
+ </html>
+    <head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
 
-		<meta charset="utf-8" />
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+.search-box {
+  position: relative;
+  width: 300px;
+  margin: -450px auto -100px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
 
-		<title>WebCatX</title>
+.search-box input {
+  width: 100%;
+  padding: 15px 15px;
+  border: none;
+  outline: none;
+  background-color: #f9f9f9;
+  border-radius: 40px;
+  transition: width 0.4s ease-in-out;
+}
 
-	</head>
+.search-box button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 
-	<body>
+.sidebar {
+  position: fixed;
+  top: 60px;
+  right: -300px;
+  width: 300px;
+  height: calc(100vh - 60px);
+  background-color: #f1f1f1;
+  transition: right 0.3s;
+  z-index: 100;
+}
 
-		<h1>Hello World</h1>
+.sidebar.open {
+  right: 0;
+}
 
-	</body>
+.category {
+  margin-top: 120px;
+}
 
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  margin: 10px;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 10px;
+}
+</style>
+<script>
+document.querySelector('.toggle-sidebar').addEventListener('click', function() {
+  document.querySelector('.sidebar').classList.toggle('open');
+});
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    e.preventDefault();
+    console.log('Clicked on:', this.href);
+  });
+});
+</script>
+
+
+<p>  </p>
+</div>
+<div class="footer">
+  <p>2008-2024©&#32  来纸工作室｜幽默的小刘吖
+  <p>友情链接：<a href="http://ass.xiaoliu1775.icu">萝莉姐自定义</a> <a href="http://2265.com/">2265安卓网</a>
+</div>
+
+</body>
 </html>
