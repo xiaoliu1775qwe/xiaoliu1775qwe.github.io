@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lazhitook</title>
+    <style>   
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #editor, #preview {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        textarea {
+            height: 300px;
+            resize: vertical;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #preview {
+            border: 1px solid #ccc;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>在线html编辑器</h1>
+<textarea id="editor" placeholder="在此输入您的HTML代码...">
+</textarea>
+<button onclick="previewHTML()">运行</button>
+<div id="preview">
+    代码效果预览框，点击“运行”进行在线预览。
+</div>
+
+<script>
+    function previewHTML() {
+        // 获取编辑器中的HTML代码
+        var htmlCode = document.getElementById('editor').value;
+        // 将代码设置为预览区域的innerHTML
+        document.getElementById('preview').innerHTML = htmlCode;
+    }
+</script>
+    <footer>
+    <p>lazhitook -2008-2024  &copy; 来纸工作室</p>
+  </footer>
+</body>
+</html>
