@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lit检查</title>
+    <link rel="stylesheet" href="https://cdn.rthe.cn/cached-d41d8cd98f00b204e9800998ecf8427e-avif/sino/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">浏览器与网络信息</h1>
+        <div class="info-card">
+            <p><strong>User-Agent:</strong> <span id="uaInfo"></span></p>
+            <p><strong>内核类型:</strong> <span id="engineInfo"></span></p>
+            <p><strong>当前地址:</strong> <span id="addressInfo"></span></p>
+           
+            <p><strong>网络连接状况:</strong> <span id="networkStatus">检测中...</span></p>
+        
+<script>function getIPAddress() {    fetch("https://api.ipify.org?format=json")      .then(response => response.json())      .then(data => {        document.getElementById("ip-address").textContent = "当前IP地址:" + data.ip;      })      .catch(error => {        console.log("Error:", error);      });  }  getIPAddress();</script>
+<style>
+.center {
+    padding: 70px 0;
+    text-align: center;
+    background-color: ;
+}
+</style>
+
+
+<div class="center">
+  <div id="ip-address">
+
+          </div>
+    </div>
+
+    </div>
+    <script src="https://cdn.rthe.cn/cached-d41d8cd98f00b204e9800998ecf8427e-avif/sino/scripts.js"></script>
+
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff;
+}
+
+.container {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.info-card {
+    padding: 2rem;
+}
+
+.info-card p {
+    margin-bottom: 1rem;
+}
+
+.info-card strong {
+    font-weight: bold;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const uaInfo = document.getElementById('uaInfo');
+    const engineInfo = document.getElementById('engineInfo');
+    const addressInfo = document.getElementById('addressInfo');
+    const networkStatus = document.getElementById('networkStatus');
+
+    // 获取User-Agent信息
+    uaInfo.textContent = navigator.userAgent;
+
+    // 简单判断内核类型
+    let engine;
+    if (navigator.userAgent.indexOf("Chrome") !== -1) {
+        engine = "Blink (Chrome)";
+    } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
+        engine = "Gecko (Firefox)";
+    } else if (navigator.userAgent.indexOf("WebKit") !== -1) {
+        engine = "WebKit (Safari)";
+    } else if (navigator.userAgent.indexOf("Trident") !== -1) {
+        engine = "Trident (Internet Explorer)";
+    } else {
+        engine = "未知";
+    }
+    engineInfo.textContent = engine;
+
+    // 显示当前页面地址
+    addressInfo.textContent = window.location.href;
+
+    // 模拟网络检测，实际应用中可能需要更复杂的实现
+    setTimeout(() => {
+        networkStatus.textContent = navigator.onLine ? "在线" : "离线";
+    }, 1000); // 延迟一秒模拟检测过程
+});
+</script>
+<script>
+function checkBrowserEngine() {
+    var userAgent = navigator.userAgent;
+    var engineInfo = '';
+
+    // WebKit (used by Safari and older Chrome)
+    if (/AppleWebKit/.test(userAgent) && !/Edge\//.test(userAgent)) {
+        engineInfo = 'WebKit (' + parseFloat(userAgent.match(/WebKit\/([\d.]+)/)[1]) + ')';
+    }
+    // Blink (used by newer Chrome, Opera, and new Edge)
+    else if (/Blink/.test(userAgent)) {
+        engineInfo = 'Blink';
+    }
+    // Gecko (used by Firefox)
+    else if (/Gecko\//.test(userAgent) && !/KHTML\//.test(userAgent)) {
+        engineInfo = 'Gecko (' + parseFloat(userAgent.match(/rv:([\d.]+)/)[1]) + ')';
+    }
+    // Trident (used by Internet Explorer)
+    else if (/Trident\/[\d.]+/.test(userAgent)) {
+        engineInfo = 'Trident (' + parseFloat(userAgent.match(/Trident\/([\d.]+)/)[1]) + ')';
+    }
+    // Presto was used by older Opera versions, but it's no longer in use
+    // else if (/Presto/.test(userAgent)) {
+    //     engineInfo = 'Presto (' + parseFloat(userAgent.match(/Presto\/([\d.]+)/)[1]) + ')';
+    // }
+    else {
+        engineInfo = 'Unknown Engine';
+    }
+
+    console.log("Browser Rendering Engine: " + engineInfo);
+}
+
+// Call the function to check the browser engine version
+checkBrowserEngine();
+</script>
+</div></body></html>
