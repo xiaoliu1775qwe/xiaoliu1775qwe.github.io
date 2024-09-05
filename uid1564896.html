@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>来纸工作室安全中心-确认跳转</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .security-center {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .site-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .site-url {
+            font-weight: bold;
+        }
+        .button-group button {
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button-group button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="security-center">
+        <h1>来纸工作室安全中心</h1>
+        <h3>您即将跳转至</h3>
+        <div class="site-info"
+        <h5>官方内部网站</h5>
+            <span class="site-url">https://xiaoliu1775.top</span>
+        </div>
+        <h5>该链接域名在官方域名之下,可以放心访问</h5>
+        <div class="button-group">
+            <button id="confirmBtn">确定</button>
+            <button id="cancelBtn">取消</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            window.location.href = 'https://xiaoliu1775.top';
+        });
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>
