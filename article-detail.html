@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/ >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章详情 - 来纸工作室</title>
+    <meta name="title" content="关于来纸工作室 - 来纸工作室">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="来纸工作室,互联网业务,技术与分享,来纸工作室运营团队,网站搭建,云计算平台">
+    <meta name="Description" content="来纸工作室，成立于2019年11月24日，我们是来自中国的互联网网络工作室，专注于互联网教程分享和网络资源分享的互联网工作室。我们的口号是:纸上梦想，创造未来！">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="blog/style.css">
+    <style>
+        /* 文章详情特定样式 */
+        .article-detail {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 0 auto;
+            max-width: 900px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+        }
+        
+        .article-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .article-detail-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .article-detail-cover {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .article-detail-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .article-body {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .article-body h2 {
+            margin: 30px 0 15px;
+            color: var(--primary);
+        }
+        
+        .article-body p {
+            margin-bottom: 15px;
+        }
+        
+        .article-body img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .article-body pre {
+            background: #f5f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .article-body code {
+            font-family: 'Courier New', monospace;
+        }
+        
+        .back-to-list {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .back-to-list:hover {
+            background: #4a5cbf;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .article-detail {
+                padding: 25px;
+            }
+            
+            .article-detail-cover {
+                height: 250px;
+            }
+            
+            .article-detail-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <button class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="logo">
+            <img src="https://img1.zhuxu.asia/img/2025/05/7a21.png" alt="来纸工作室">
+        </div>
+    </nav>
+
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <a href="index.html"><i class="fas fa-home"></i> 首页</a>
+        <a href="articles.html"><i class="fas fa-newspaper"></i> 官方文章</a>
+        <a href="link.html" class="active"><i class="fas fa-link"></i> 友情链接</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> 关于我们</a>
+        <a href="#services"><i class="fas fa-cogs"></i> 业务介绍</a>
+        <a href="#sites"><i class="fas fa-globe"></i> 旗下站点</a>
+        <a href="#timeline"><i class="fas fa-history"></i> 官方动态</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> 联系我们</a>
+        <br>
+    <button onclick="window.open('kjcx1pro-API/')" 
+        style="position:fixed; right:20px; background:#4285f4; color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer">用户中心</button>
+    </div>
+    
+    <div class="sidebar-overlay"></div>
+
+    <!-- 文章详情界面 -->
+    <section class="section">
+        <div class="container">
+            <div class="article-detail">
+                <div class="article-header">
+                    <h1 class="article-detail-title">关于来纸工作室</h1>
+                    <div class="article-meta">
+                        <span><i class="fas fa-user"></i> 幽默的小刘吖</span>
+                        <span><i class="fas fa-calendar"></i> 2025年6月19日</span>
+                    </div>
+                    <div class="article-detail-cover">
+                        <img src="img/lz.png" alt="AI医疗">
+                    </div>
+                </div>
+                <div class="article-body">
+                    <h2>关于</h2>
+                    <p>来纸工作室网络科技（以下简称"来纸工作室"），来纸工作室成立于2019年，。多年来，来纸工作室致力于为企业客户提供完整的互联网教程分享，让更多的人了解互联网，带领走进互联网的时代。</p>
+                    <p>自公司19年成立以来，来纸工作室已为1000+的用户提供丰富的教程分享，截至目前，已收到超过100的好评。来纸工作室不断的向着卓越的互联网业务平台服务商迈进。</p>
+                    
+                    <pre><code class="language-python"># 示例代码：使用CNN进行医疗影像分类
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+
+# 创建卷积神经网络模型
+model = Sequential([
+    Conv2D(32, (3,3), activation='relu', input_shape=(150, 150, 3)),
+    MaxPooling2D(2,2),
+    Conv2D(64, (3,3), activation='relu'),
+    MaxPooling2D(2,2),
+    Flatten(),
+    Dense(512, activation='relu'),
+    Dense(1, activation='sigmoid')
+])</code></pre>
+                    
+                    <h3>个性化治疗方案</h3>
+                    <p>挑战、创新、进取、高瞻产业远景，来纸工作室秉持创新为先的信念，始终领路在信息化时代互联网行业的前沿。</p>
+                   <video width="280" height="240" controls>
+  <source src="lzchmp4.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+您的浏览器不支持Video标签。
+</video>
+                    
+                    <a href="blog.html" class="back-to-list"><i class="fas fa-arrow-left"></i> 返回文章列表</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 页脚 -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-logo">来纸工作室</div>
+                <p>纸上梦想，创造未来！我们致力于打造高质量的互联网教程和资源分享平台。</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> 首页</a></li>
+                    <li><a href="#about"><i class="fas fa-angle-right"></i> 关于我们</a></li>
+                    <li><a href="#services"><i class="fas fa-angle-right"></i> 业务介绍</a></li>
+                    <li><a href="#sites"><i class="fas fa-angle-right"></i> 旗下站点</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="https://www.kjcx1.top"><i class="fas fa-angle-right"></i> 科技创想网络</a></li>
+                    <li><a href="https://053986.xyz/"><i class="fas fa-angle-right"></i> 爱上临沂</a></li>
+                    <li><a href="https://dh.hx520.fun/"><i class="fas fa-angle-right"></i> 金星导航</a></li>
+                    <li><a href="https://blog.lzch.top/"><i class="fas fa-angle-right"></i> 幽默的小刘吖</a></li>
+                </ul>
+            </div><div class="footer-links">
+                <h3>联系我们</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> xiaoliu1775@lzch.top</li>
+                    <li><i class="fas fa-phone"></i> 暂无</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 江苏省宿迁市宿豫区</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2019-2025 来纸工作室 版权所有
+         <br><a href="https://idc.lzch.top" target="_blank"> 本站由<img src="https://img1.zhuxu.asia/img/2025/03/0d97.png" width="50" /> 提供云服务器支持</a>
+         <br><a href="https://www.js12377.cn/" title="中央网信办举报中心" target="_blank"><img style="width:20px;height:20px;" src="https://img1.zhuxu.asia/img/2024/12/2261d05c406a6473.png">江苏省互联网不良信息举报中心</a>
+<a href="https://cyberpolice.mps.gov.cn/" title="网络违法犯罪举报中心" target="_blank"><img style="width:20px;height:20px;" src="https://img1.zhuxu.asia/img/2025/02/4e31.png">网络违法犯罪举报中心</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

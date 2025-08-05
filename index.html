@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/ >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>来纸工作室 - 纸上梦想，创造未来</title>
+    <meta name="title" content="江苏省来纸网络科技工作室">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="来纸工作室,互联网业务,技术与分享,来纸工作室运营团队,网站搭建,云计算平台">
+    <meta name="Description" content="来纸工作室，成立于2019年11月24日，我们是来自中国的互联网网络工作室，专注于互联网教程分享和网络资源分享的互联网工作室。我们的口号是:纸上梦想，创造未来！">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script> <!-- 调用js来实现侧滑拦 -->
+        
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <button class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="logo">
+            <img src="https://img1.zhuxu.asia/img/2025/05/7a21.png" alt="来纸工作室">
+        </div>
+    </nav>
+<!-- 侧边栏 -->
+    <div class="sidebar">
+        <a href="#"><i class="fas fa-home"></i> 首页</a>
+        <a href="blog.html"><i class="fas fa-newspaper"></i> 官方文章</a>
+        <a href="link.html" class="active"><i class="fas fa-link"></i> 友情链接</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> 关于我们</a>
+        <a href="#services"><i class="fas fa-cogs"></i> 业务介绍</a>
+        <a href="#sites"><i class="fas fa-globe"></i> 旗下站点</a>
+        <a href="#timeline"><i class="fas fa-history"></i> 官方动态</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> 联系我们</a>
+        <br>
+    <button onclick="window.open('kjcx1pro-API/')" 
+        style="position:fixed; right:20px; background:#4285f4; color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer">用户中心</button>
+    </div>
+    
+    <div class="sidebar-overlay"></div>
+
+    <!-- 首页顶部图 -->
+    <section class="hero">
+        <h1>来纸工作室</h1>
+        <p>纸上梦想，创造未来 - 专注于互联网教程分享和网络资源分享</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">联系我们</a>
+            <a href="blog.html" class="btn">官方博客</a>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="section">
+        <h2 class="section-title">关于来纸工作室</h2>
+        <div class="about">
+            <div class="about-content">
+                <p>来纸工作室成立于2019年11月24日，我们是来自中国的互联网网络工作室，专注于互联网教程分享和网络资源分享。</p>
+                <p>我们的口号是：纸上梦想，创造未来！我们相信通过知识分享和技术创新，每个人都能在互联网时代实现自己的梦想。</p>
+                <p>工作室由一群热爱技术的年轻人创立，致力于打造高质量的教程内容和实用的网络资源，帮助更多人掌握互联网技术，实现个人和企业的数字化转型。</p>
+            </div>
+            <div class="about-image">
+                <img src="img/lz.png" alt="工作室团队">
+            </div>
+        </div>
+    </section>
+
+    <!-- 业务介绍 -->
+    <section id="services" class="section services">
+        <h2 class="section-title">我们的业务</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>人工智能</h3>
+                <p>领先的AI算法与行业深度结合，赋能企业智能化升级，提供定制化的AI解决方案。</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>云计算</h3>
+                <p>安全可靠的云服务，助力企业实现弹性扩展，提供高性能的云存储和计算资源。</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>大数据</h3>
+                <p>深度挖掘数据价值，驱动智能决策与业务增长，提供全面的数据分析解决方案。</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>网络安全</h3>
+                <p>全方位安全防护体系，保障企业数字资产安全，提供专业的安全评估和防护服务。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 旗下站点 -->
+    <section id="sites" class="section">
+        <h2 class="section-title">旗下站点</h2>
+        <div class="sites-grid">
+            <div class="site-card">
+                <div class="site-header">
+                    <div class="site-icon">
+                        <img src="https://img1.zhuxu.asia/img/2025/05/c247.png" width="50" height="50">
+                    </div>
+                    <div class="site-info">
+                        <h3>来纸数据</h3>
+                        <a href="https://idc.lzch.top/">idc.lzch.top</a>
+                    </div>
+                </div>
+                <p class="site-description">来纸工作室旗下云计算平台</p>
+                <div class="site-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">2.7M</div>
+                        <div>月访问量</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">57.1%</div>
+                        <div>用户留存</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">17min</div>
+                        <div>平均时长</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="site-card">
+                <div class="site-header">
+                    <div class="site-icon">
+                        <img src="https://img1.zhuxu.asia/img/2025/06/7dee.png" width="50" height="50">
+                    </div>
+                    <div class="site-info">
+                        <h3>来纸应用</h3>
+                        <a href="https://store.lzch.top">store.lzch.top</a>
+                    </div>
+                </div>
+                <p class="site-description">来纸工作室旗下软件资源分享平台</p>
+                <div class="site-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">1.2M</div>
+                        <div>月访问量</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">42.3%</div>
+                        <div>用户留存</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">24min</div>
+                        <div>平均时长</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 官方动态 -->
+    <section id="timeline" class="section">
+        <h2 class="section-title">官方动态</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2019.11.24</div>
+                <div class="timeline-content">
+                    <h3>优优商店正式成立</h3>
+                    <p>来纸工作室的前身，当时的业务是手工折纸</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2022.11.24</div>
+                <div class="timeline-content">
+                    <h3>优优商成立三周年</h3>
+                    <p>优优商店迎来成立三周年，发布了全新的品牌形象和未来三年发展规划。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2024.06.13</div>
+                <div class="timeline-content">
+                    <h3>正式更名</h3>
+                    <p>正式更名为来纸工作室，由原来的业务转为互联网业务</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2025.03.10</div>
+                <div class="timeline-content">
+                    <h3>来纸数据正式发布</h3>
+                    <p>来纸数据正式发布，来纸工作室旗下云计算平台</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2025.04.28</div>
+                <div class="timeline-content">
+                    <h3>来纸应用火热上线</h3>
+                    <p>来纸工作室首个软件资源分享平台正式上线</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-logo">来纸工作室</div>
+                <p>纸上梦想，创造未来！我们致力于打造高质量的互联网教程和资源分享平台。</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> 首页</a></li>
+                    <li><a href="#about"><i class="fas fa-angle-right"></i> 关于我们</a></li>
+                    <li><a href="#services"><i class="fas fa-angle-right"></i> 业务介绍</a></li>
+                    <li><a href="#sites"><i class="fas fa-angle-right"></i> 旗下站点</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="https://www.kjcx1.top"><i class="fas fa-angle-right"></i> 科技创想网络</a></li>
+                    <li><a href="https://053986.xyz/"><i class="fas fa-angle-right"></i> 爱上临沂</a></li>
+                    <li><a href="https://dh.hx520.fun/"><i class="fas fa-angle-right"></i> 金星导航</a></li>
+                    <li><a href="https://blog.lzch.top/"><i class="fas fa-angle-right"></i> 幽默的小刘吖</a></li>
+                </ul>
+            </div><div class="footer-links">
+                <h3>联系我们</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> xiaoliu1775@lzch.top</li>
+                    <li><i class="fas fa-phone"></i> 暂无</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 江苏省宿迁市宿豫区</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2019-2025 来纸工作室 版权所有
+         <br><a href="https://idc.lzch.top" target="_blank"> 本站由<img src="https://img1.zhuxu.asia/img/2025/03/0d97.png" width="50" /> 提供云服务器支持</a>
+         <br><a href="https://www.js12377.cn/" title="中央网信办举报中心" target="_blank"><img style="width:20px;height:20px;" src="https://img1.zhuxu.asia/img/2024/12/2261d05c406a6473.png">江苏省互联网不良信息举报中心</a>
+<a href="https://cyberpolice.mps.gov.cn/" title="网络违法犯罪举报中心" target="_blank"><img style="width:20px;height:20px;" src="https://img1.zhuxu.asia/img/2025/02/4e31.png">网络违法犯罪举报中心</a>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // 侧边栏切换
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.sidebar-overlay');
+        
+        sidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+        
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // 关闭侧边栏
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 页面加载动画
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+            
+            // 元素动画
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.service-card, .site-card, .timeline-item');
+                elements.forEach(el => {
+                    const position = el.getBoundingClientRect();
+                    if (position.top < window.innerHeight * 0.9) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // 初始化元素位置
+            document.querySelectorAll('.service-card, .site-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            document.querySelectorAll('.timeline-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateX(-30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            // 监听滚动事件
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // 初始执行一次
+        });
+    </script>
+</body>
+</html>.

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/ >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>友情链接 - 来纸工作室</title>
+    <meta name="title" content="友情链接 - 来纸工作室">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="来纸工作室,互联网业务,技术与分享,来纸工作室运营团队,网站搭建,云计算平台">
+    <meta name="Description" content="来纸工作室，成立于2019年11月24日，我们是来自中国的互联网网络工作室，专注于互联网教程分享和网络资源分享的互联网工作室。我们的口号是:纸上梦想，创造未来！">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        :root {
+            --primary: #5e72e4;
+            --secondary: #11cdef;
+            --accent: #2dce89;
+            --light: rgba(255, 255, 255, 0.95);
+            --dark: #32325d;
+            --glass: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.95);
+            --shadow: 0 8px 32px rgba(50, 50, 93, 0.1);
+            --transition: all 0.4s ease;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #e4e7f5);
+            color: var(--dark);
+            line-height: 1.6;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        
+        /* 导航栏样式 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .navbar.scrolled {
+            padding: 15px 5%;
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo img {
+            height: 50px;
+            filter: drop-shadow(0 0 10px rgba(94, 114, 228, 0.3));
+        }
+        
+        .sidebar-toggle {
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* 侧边栏 */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 80px 20px 20px;
+            z-index: 999;
+            transition: var(--transition);
+            border-right: 1px solid var(--glass-border);
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sidebar.active {
+            left: 0;
+        }
+        
+        .sidebar a {
+            display: block;
+            color: var(--dark);
+            text-decoration: none;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .sidebar a:hover {
+            background: rgba(94, 114, 228, 0.1);
+        }
+        
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* 内容区域 */
+        .section {
+            padding: 120px 5% 80px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--dark);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        /* 友情链接分类 */
+        .links-category {
+            margin-bottom: 60px;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-title i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        /* 友情链接网格 */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        /* 友情链接卡片 */
+        .link-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 25px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .link-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .link-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(94, 114, 228, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 28px;
+            color: var(--primary);
+        }
+        
+        .link-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .link-url {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 200px;
+        }
+        
+        .link-description {
+            flex-grow: 1;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .link-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .link-button:hover {
+            background: #4a5cbf;
+            transform: translateY(-3px);
+        }
+        
+        /* 合作伙伴特殊样式 */
+        .partners .link-card {
+            border-left: 4px solid var(--accent);
+        }
+        
+        .partners .link-icon {
+            background: rgba(45, 206, 137, 0.1);
+            color: var(--accent);
+        }
+     
+       /* 页脚 */
+        footer {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 60px 10% 30px;
+            border-top: 1px solid var(--glass-border);
+            color: var(--dark);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--dark);
+            font-size: 14px;
+        }
+
+.       /* 响应式设计 */
+        @media (max-width: 992px) {
+            .section {
+                padding: 120px 5% 50px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+            
+            .link-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .link-icon {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <button class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="logo">
+            <img src="https://img1.zhuxu.asia/img/2025/05/7a21.png" alt="来纸工作室">
+        </div>
+    </nav>
+
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <a href="index.html"><i class="fas fa-home"></i> 首页</a>
+        <a href="blog.html"><i class="fas fa-newspaper"></i> 官方文章</a>
+        <a href="#" class="active"><i class="fas fa-link"></i> 友情链接</a>
+        <a href="index.html#about"><i class="fas fa-info-circle"></i> 关于我们</a>
+        <a href="index.html#services"><i class="fas fa-cogs"></i> 业务介绍</a>
+        <a href="index.html#sites"><i class="fas fa-globe"></i> 旗下站点</a>
+        <a href="index.html#timeline"><i class="fas fa-history"></i> 官方动态</a>
+        <a href="index.html#contact"><i class="fas fa-envelope"></i> 联系我们</a>
+        <br>
+    <button onclick="window.open('kjcx1pro-API/')" 
+        style="position:fixed; right:20px; background:#4285f4; color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer">用户中心</button>
+    </div>
+    
+    <div class="sidebar-overlay"></div>
+
+    <!-- 友情链接内容 -->
+    <section class="section" id="links">
+        <div class="container">
+            <h2 class="section-title">友情链接</h2>
+            
+            <!-- 小伙伴们 -->
+            <div class="links-category friends">
+                <h3 class="category-title">
+                    <i class="fas fa-user-friends"></i> 小伙伴们
+                </h3>
+                
+                <div class="links-grid">
+                    <!-- 小伙伴1 -->
+                    <div class="link-card">
+                        <div class="link-header">
+                            <div class="link-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="link-info">
+                                <h3>开发者社区</h3>
+                                <a href="#" class="link-url">dev-community.com</a>
+                            </div>
+                        </div>
+                        <p class="link-description">
+                            国内领先的开发者交流平台，分享前沿技术、开发经验和行业动态，为开发者提供成长和交流的空间。
+                        </p>
+                        <a href="#" class="link-button">访问网站</a>
+                    </div>
+
+             <!-- 小伙伴2 -->
+                    <div class="link-card">
+                        <div class="link-header">
+                            <div class="link-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div class="link-info">
+                                <h3>设计灵感站</h3>
+                                <a href="#" class="link-url">design-inspiration.net</a>
+                            </div>
+                        </div>
+                        <p class="link-description">
+                            每日更新优质设计作品，涵盖UI、插画、品牌设计等领域，为设计师提供源源不断的创意灵感。
+                        </p>
+                        <a href="#" class="link-button">访问网站</a>
+                    </div>
+                    
+                    <!-- 小伙伴3 -->
+                    <div class="link-card">
+                        <div class="link-header">
+                            <div class="link-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="link-info">
+                                <h3>在线学习平台</h3>
+                                <a href="#" class="link-url">learn-online.org</a>
+                            </div>
+                        </div>
+                        <p class="link-description">
+                            提供高质量的编程、设计、数据科学等在线课程，帮助用户掌握实用技能，实现职业发展。
+                        </p>
+                        <a href="#" class="link-button">访问网站</a>
+                    </div>
+                </div>
+            </div>
+
+           <!-- 合作伙伴 -->
+            <div class="links-category partners">
+                <h3 class="category-title">
+                    <i class="fas fa-handshake"></i> 合作伙伴
+                </h3>
+                
+                <div class="links-grid">
+                    <!-- 合作伙伴1 -->
+                    <div class="link-card">
+                        <div class="link-header">
+                            <div class="link-icon">
+                               <img src="https://img1.zhuxu.asia/img/2025/03/062a.png" width="50" height="50">
+                            </div>
+                            <div class="link-info">
+                                <h3>科技创想网络</h3>
+                                <a href="https://www.kjcx1.top/" class="link-url">www.kjcx1.top</a>
+                            </div>
+                        </div>
+                        <p class="link-description">
+                            科技创造，梦想飞扬
+                        </p>
+                        <a href="https://www.kjcx1.top" class="link-button">访问网站</a>
+                    </div>
+     </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- 页脚 -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-logo">来纸工作室</div>
+                <p>纸上梦想，创造未来！我们致力于打造高质量的互联网教程和资源分享平台。</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> 首页</a></li>
+                    <li><a href="#about"><i class="fas fa-angle-right"></i> 关于我们</a></li>
+                    <li><a href="#services"><i class="fas fa-angle-right"></i> 业务介绍</a></li>
+                    <li><a href="#sites"><i class="fas fa-angle-right"></i> 旗下站点</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="https://www.kjcx1.top"><i class="fas fa-angle-right"></i> 科技创想网络</a></li>
+                    <li><a href="https://053986.xyz/"><i class="fas fa-angle-right"></i> 爱上临沂</a></li>
+                    <li><a href="https://dh.hx520.fun/"><i class="fas fa-angle-right"></i> 金星导航</a></li>
+                    <li><a href="https://blog.lzch.top/"><i class="fas fa-angle-right"></i> 幽默的小刘吖</a></li>
+                </ul>
+            </div><div class="footer-links">
+                <h3>联系我们</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> xiaoliu1775@lzch.top</li>
+                    <li><i class="fas fa-phone"></i> 暂无</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 江苏省宿迁市宿豫区</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2019-2025 来纸工作室 版权所有
+         <br><a href="https://idc.lzch.top" target="_blank"> 本站由<img src="https://img1.zhuxu.asia/img/2025/03/0d97.png" width="50" /> 提供云服务器支持</a>
+         <br><a href="https://www.js12377.cn/" title="中央网信办举报中心" target="_blank"><img style="width:20px;height:20px;" src="https://img1.zhuxu.asia/img/2024/12/2261d05c406a6473.png">江苏省互联网不良信息举报中心</a>
+<a href="https://cyberpolice.mps.gov.cn/" title="网络违法犯罪举报中心" target="_blank"><img style="width:20px;height:20px;" src="https://img1.zhuxu.asia/img/2025/02/4e31.png">网络违法犯罪举报中心</a>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // 侧边栏切换
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.sidebar-overlay');
+        
+        sidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+        
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        // 友情链接卡片悬停效果
+        const linkCards = document.querySelectorAll('.link-card');
+        linkCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
